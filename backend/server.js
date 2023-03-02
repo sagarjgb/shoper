@@ -2,6 +2,8 @@ import express from "express"; // const express = require('express')
 import data from "./data.js"; // .js in express
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import seedRouter from "./routes/seedRoutes.js";
+import productRouter from "./routes/productRoutes.js";
 
 dotenv.config();
 
@@ -15,6 +17,8 @@ mongoose
   });
 
 const app = express(); // express() is a function which returns a object
+app.use("/api/seed", seedRouter);
+app.use("/api/products", productRouter);
 
 // respond with  when a GET request is made to the api/products
 app.get("/api/products", (req, res) => {
