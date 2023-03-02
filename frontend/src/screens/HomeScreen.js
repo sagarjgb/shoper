@@ -36,12 +36,12 @@ function HomeScreen() {
         dispatch({ type: "FETCH_FAIL", payload: err.message });
       }
     };
-    fetchData(); 
-  }, []); 
+    fetchData();
+  }, []);
   return (
     <div>
       <Helmet>
-        <title>shoper</title>
+        <title>shopper</title>
       </Helmet>
       <h1>Featured Products</h1>
       <div className="products">

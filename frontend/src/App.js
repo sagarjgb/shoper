@@ -8,6 +8,8 @@ import Container from "react-bootstrap/Container";
 import { LinkContainer } from "react-router-bootstrap";
 import { useContext } from "react";
 import { Store } from "./Store";
+import CartScreen from "./screens/CartScreen";
+import SigninScreen from "./screens/SigninScreen";
 
 function App() {
   const { state } = useContext(Store);
@@ -24,6 +26,7 @@ function App() {
                   <span style={{ color: "#cc00ff" }}>s</span>
                   <span style={{ color: "#77dee6" }}>h</span>
                   <span style={{ color: "#f5072b" }}>o</span>
+                  <span style={{ color: "#ffffff" }}>p</span>
                   <span style={{ color: "#ffffff" }}>p</span>
                   <span style={{ color: "#ffff00" }}>e</span>
                   <span style={{ color: "#1aff00" }}>r</span>
@@ -46,6 +49,8 @@ function App() {
           <Container className="mt-3">
             <Routes>
               <Route path="/Products/:slug" element={<ProductScreen />} />
+              <Route path="/cart" element={<CartScreen />} />
+              <Route path="/signin" element={<SigninScreen />} />
               <Route path="/" element={<HomeScreen />} />
             </Routes>
           </Container>
