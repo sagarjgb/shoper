@@ -1,5 +1,18 @@
 import express from "express"; // const express = require('express')
 import data from "./data.js"; // .js in express
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log("connected to db");
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
 
 const app = express(); // express() is a function which returns a object
 
